@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WicaRun>
+  <RunInfos>
+
+    <!-- Primary RunInfo for running the gated scenario. -->
+    <RunInfo DataTablesFile="%WINDIR%\appcompat\appraiser\gated\gated.ini">
+
+      <!-- Metadata -->
+      <Component Type="Metadata" SpecificIdentifier="Metadata" TypeIdentifier="Metadata">
+        <Property Name="UpgradeMode" Value="Swap" />
+      </Component>
+
+      <!-- Inventory Components -->
+      <Component TypeIdentifier="CacheComponent" SpecificIdentifier="" Type="Custom">
+        <Property Name="CacheName" Value="GatedDefault" />
+        <Property Name="CacheVersion" Value="10" />
+        <Property Name="CreateCacheRunInfoName" Value="CreateCache" />
+        <Property Name="UseCacheRunInfoName" Value="UseCache" />
+        <Property Name="MaxCacheAge" Value="5" />
+      </Component>
+
+      <!-- Data Source Components -->
+      <Component TypeIdentifier="DatasourceSdbDevice" SpecificIdentifier="" Type="DataSource">
+        <Property Name="DeviceSdbFilePath" Value="%WINDIR%\appcompat\appraiser\gated\gated.sdb" />
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+      <Component TypeIdentifier="DatasourceSdbDriver" SpecificIdentifier="" Type="DataSource">
+        <Property Name="DriverSdbFilePath" Value="%WINDIR%\appcompat\appraiser\gated\gated.sdb" />
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+      <Component TypeIdentifier="DatasourceSdbMatchingInfo" SpecificIdentifier="" Type="DataSource">
+        <Property Name="MatchingInfoSdbFilePath" Value="%WINDIR%\appcompat\appraiser\gated\gated.sdb" />
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+      <Component TypeIdentifier="DatasourceSdbOsUpgrade" SpecificIdentifier="" Type="DataSource">
+        <Property Name="OsUpgradeSdbFilePath" Value="%WINDIR%\appcompat\appraiser\gated\gated.sdb" />
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+      <Component TypeIdentifier="DatasourceSdbBios" SpecificIdentifier="" Type="DataSource">
+        <Property Name="BiosSdbFilePath" Value="%WINDIR%\appcompat\appraiser\gated\gated.sdb" />
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+
+      <!-- Decision Components -->
+      <Component TypeIdentifier="DecisionMakerFile" SpecificIdentifier="DecisionMakerFile" Type="DecisionMakerFile"><!-- Legacy component, may be ignored -->
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+      <Component TypeIdentifier="DecisionTables" SpecificIdentifier="DecisionTables" Type="DecisionMakerComponent"><!-- Modern component, may be ignored -->
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+
+      <!-- Decision Aggregator Components -->
+      <Component TypeIdentifier="SdbCopier" SpecificIdentifier="" Type="DecisionAggregator" />
+      <Component TypeIdentifier="AggregatorSummary" SpecificIdentifier="" Type="DecisionAggregator">
+        <Property Name="TargetVersion" Value="TH2" />
+      </Component>
+
+      <!-- Outputter Components -->
+      <Component TypeIdentifier="OutputRegistrySdb" SpecificIdentifier="" Type="Outputter">
+        <Property Name="SdbRegistryOutputKeyName" Value="Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Appraiser\GWX" />
+        <Property Name="SdbRegistryOutputValueName" Value="SdbEntries" />
+        <Property Name="SdbRegistryOutputIncludedAppraiserData" Value="GatedBlock" />
+        <Property Name="SdbRegistryOutputIncludedAppraiserData" Value="GatedWarn" />
+      </Component>
+      <Component TypeIdentifier="OutputRegistrySummary" SpecificIdentifier="" Type="Outputter" />
+    </RunInfo>
+
+    <!-- RunInfo that populates the cache. -->
+    <RunInfo Name="CreateCache" ReferenceOnly="TRUE">
+      <Component TypeIdentifier="InventoryApplication" SpecificIdentifier="" Type="Inventory">
+        <Property Name="ApplicationInventoryXmlPath" Value="%WINDIR%\appcompat\appraiser\gated\ApplicationInventory.xml" />
+        <Property Name="ApplicationInventoryXmlPathForFile" Value="%WINDIR%\appcompat\appraiser\gated\FileInventory.xml" />
+        <Property Name="ApplicationInventoryShouldRun" Value="TRUE" />
+        <Property Name="ApplicationInventoryShouldRunFile" Value="TRUE" />
+        <Property Name="ApplicationInventoryFullRun" Value="TRUE" />
+      </Component>
+      <Component TypeIdentifier="InventoryDevice" SpecificIdentifier="" Type="Inventory">
+        <Property Name="DeviceInventoryXmlPath" Value="%WINDIR%\appcompat\appraiser\gated\DeviceInventory.xml" />
+        <Property Name="DeviceInventoryShouldRunDevice" Value="TRUE" />
+        <Property Name="DeviceInventoryShouldRunSystem" Value="TRUE" />
+      </Component>
+      <Component TypeIdentifier="InventoryMatchingInfo" SpecificIdentifier="" Type="Inventory" />
+      <Component TypeIdentifier="InventorySummary" SpecificIdentifier="" Type="Inventory" />
+      <Component TypeIdentifier="OutputBinary" SpecificIdentifier="" Type="Outputter">
+        <Property Name="OutputBinFilePath" Value="%WINDIR%\appcompat\appraiser\GatedDefaultCache.bin" />
+        <Property Name="OutputBinTier" Value="Inventory" />
+      </Component>
+    </RunInfo>
+
+    <!-- RunInfo that consumes the cache. -->
+    <RunInfo Name="UseCache" ReferenceOnly="TRUE">
+      <Component TypeIdentifier="InventoryBinaryDeserializer" SpecificIdentifier="" Type="Inventory">
+        <Property Name="BinaryDeserializerFilePath" Value="%WINDIR%\appcompat\appraiser\GatedDefaultCache.bin" />
+        <Property Name="BinaryDeserializerTier" Value="Inventory" />
+      </Component>
+    </RunInfo>
+
+  </RunInfos>
+  <Assets />
+</WicaRun>

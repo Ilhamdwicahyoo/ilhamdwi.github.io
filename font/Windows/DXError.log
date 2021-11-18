@@ -1,0 +1,5 @@
+--------------------
+[09/15/14 15:47:05] module: dsetup32(Jul 28 2006), file: inline.h, line: 97, function: IsDotNETFrameworkInstalled
+
+    Failed API:		GetCORVersion()
+

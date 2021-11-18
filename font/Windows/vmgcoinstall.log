@@ -1,0 +1,67 @@
+
+
+==============> Begin Log 2013/08/22 07:46:17
+
+HardwareId = VMBUS\{f8615163-df3e-46c5-913f-f2d2f965ed0e}
+HardwareId = VMBUS\{7049d771-dd88-41a3-9f27-eae0a7de3187}
+DIF_INSTALLDEVICE (pre-processing)
+Processing install info for device vmbus\{f8615163-df3e-46c5-913f-f2d2f965ed0e}
+Service name = netvsc
+No additional processing required
+
+
+==============> Begin Log 2013/08/22 07:46:18
+
+HardwareId = VMBUS\{f8615163-df3e-46c5-913f-f2d2f965ed0e}
+HardwareId = VMBUS\{7049d771-dd88-41a3-9f27-eae0a7de3187}
+DIF_INSTALLDEVICE (post-processing): InstallResult=0x0
+Processing install info for device vmbus\{f8615163-df3e-46c5-913f-f2d2f965ed0e}
+Service name = netvsc
+NetCfgPath [C:\Windows\system32\netcfg.exe]
+No additional processing required
+
+
+==============> Begin Log 2013/08/22 07:46:19
+
+HardwareId = VMBUS\{32412632-86cb-44a2-9b5c-50d1417354f5}
+HardwareId = VMBUS\{00000000-0000-8899-0000-000000000000}
+DIF_INSTALLDEVICE (pre-processing)
+Processing install info for device vmbus\{32412632-86cb-44a2-9b5c-50d1417354f5}
+Service name = storflt
+No additional processing required
+
+
+==============> Begin Log 2013/08/22 07:46:19
+
+HardwareId = VMBUS\{32412632-86cb-44a2-9b5c-50d1417354f5}
+HardwareId = VMBUS\{00000000-0000-8899-0000-000000000000}
+DIF_INSTALLDEVICE (post-processing): InstallResult=0x0
+Processing install info for device vmbus\{32412632-86cb-44a2-9b5c-50d1417354f5}
+Service name = storflt
+Set registry value SYSTEM\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}\LowerFilters += storflt: 0x0
+Set registry value SYSTEM\CurrentControlSet\Services\storflt\Enabled = 0x1: 0x0
+Get registry value SYSTEM\CurrentControlSet\Services\disk\TimeoutValue, Type: 0, Size: 4; Error: 0x2
+Set registry value SYSTEM\CurrentControlSet\Services\disk\TimeoutValue = 0x78: 0x0
+No additional processing required
+
+
+==============> Begin Log 2013/08/22 07:47:36
+
+DIF_REMOVE (pre-processing)
+HardwareId = VMBUS\{32412632-86cb-44a2-9b5c-50d1417354f5}
+HardwareId = VMBUS\{00000000-0000-8899-0000-000000000000}
+DIF_REMOVE (post-processing)
+Processing uninstall info for device vmbus\{32412632-86cb-44a2-9b5c-50d1417354f5}
+Service name = storflt
+Deleting value storflt from MULTI-SZ entry SYSTEM\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}\LowerFilters: 0x0
+
+
+==============> Begin Log 2013/08/22 07:47:36
+
+DIF_REMOVE (pre-processing)
+HardwareId = VMBUS\{f8615163-df3e-46c5-913f-f2d2f965ed0e}
+HardwareId = VMBUS\{7049d771-dd88-41a3-9f27-eae0a7de3187}
+DIF_REMOVE (post-processing)
+Processing uninstall info for device vmbus\{f8615163-df3e-46c5-913f-f2d2f965ed0e}
+Service name = netvsc
+NetCfgPath [C:\Windows\system32\netcfg.exe]
