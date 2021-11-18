@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="font/css/all.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="jquery.js" ></script>
+    <title>UlangLagi3</title>
+    <style>
+        .judul {
+            height: 60px;
+            background-color: rgb(13, 68, 177);
+        }
+        .btn {
+            width: 327px;
+            margin-top: 3px;
+            background-color: rgb(73, 163, 236);
+        }
+        .sidebar {
+            height: 575px;
+            background-color: rgb(247, 230, 234);
+        }
+        .reset {
+            margin: auto;
+            width: 90px;
+            background-color: red;
+        }
+        .take {
+            height: 47px;
+            width: 327px;
+            background-color: rgb(73, 163, 236);
+        }
+        .nana {
+            height: 420px;
+            width: 400px;
+            background-color:whitesmoke;
+            margin-bottom: 10px;
+            overflow: auto;
+        }
+        .belanja3 {
+            width: 325px;
+            height: 80px;
+            border: 2px solid black;
+            margin-top: 5px;
+        }
+        .bayaran {
+            height: 25px;
+            background-color:white;
+        }
+        .bayaran3 {
+            background-color: rgb(73, 163, 236);
+        }
+        .itel {
+            height: 50px;
+            background-color: white;
+        }
+        .fas {
+            margin-left: 10px;
+        }
+        .content {
+            height: 700px;
+            background-color: rgb(233, 232, 233);
+        }
+        .bawah {
+            width: 1380px;
+            height: 30px;
+            background-color: rgb(13, 68, 177);
+            color: whitesmoke;
+            margin-top: 70px;
+            margin-left: 15px;
+        }
+        .paymen {
+            width: 200px;
+            height: 55px;
+            background-color: rgb(73, 163, 236);
+            text-align: center;
+            margin-left: 790px;
+        }
+        .makanan {
+            height: 640px;
+            background-color: white;
+        }
+        .name1 {
+            width: 180px;
+            height: 205px;
+            border: 3px solid black;
+            background-color: white;
+            padding: auto;
+            margin-top: 3px;
+            float: left;
+            margin-right: 3px;
+            color: rgb(73, 163, 236);
+        }
+
+        @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+    
+    </style>
+</head>
+<body>
+    <!-- judul -->
+    <div class="judul col-md-12 text-white h2 pt-2 mb-0">
+        <h1><b>Starbhak Mart</b></h1>
+    </div>
+    <!-- take away -->
+    <div class="row">
+        <div class="sidebar col-md-3">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle mt-3 ml-2 pt-2" type="button" data-toggle:="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 47px;"><b>Take Away</b></button>
+            </div>
+                <div class="take mt-3 ml-2 pt-2 text-white text-center">
+                <h4><i class="fas fa-user-secret">&nbsp;</i>SHOP</h4>
+            </div>
+            <!-- menu klik -->
+            <div class="nana mt-2 ml-1" id="belanja3">
+                
+            </div>
+            <br>
+            <br>
+            <div class="bayaran col-12">
+                Jumlah : <b id="jumlah"></b>
+            </div>
+            <div class="bayaran col-12">
+                Tax : <b id="tax"></b>
+            </div>
+            <div class="bayaran3 col-12">
+                Total Amount : <b id="total"></b>
+            </div>
+            <br>
+            <button class="reset btn btn-primary" onclick="Reset()">Reset</button>
+        </div>
+        
+        <!-- makanan -->
+        <div class="content col-md-9 pl-0 pr-0">
+            
+            <div class="itel">
+                <h3 style="margin-left: 10px;"><b>Item List</b>
+                    <i class="fas fa-search fa-1x" style="margin-left: 780px;"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-link"></i></h3>
+                
+            </div>
+            <div class="makanan m-2">
+                <div class="name1 ml-1" id="pepsid">
+                    <img src="pepsi2.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Pepsi Drink</h5>
+                    <h3 style="text-align: center;"><b>Rp 6.500</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="bintangd">
+                    <img src="bintang.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Bintang Drink</h5>
+                    <h3 style="text-align: center;"><b>Rp 7.500</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="cocacolad">
+                    <img src="cocacola.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Coca Cola</h5>
+                    <h3 style="text-align: center;"><b>Rp 6.000</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="awcoklatd">
+                    <img src="awcoklat.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">AW Sarsaparlla</h5>
+                    <h3 style="text-align: center;"><b>Rp 8.200</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="bearb">
+                    <img src="bear.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Bear Brand</h5>
+                    <h3 style="text-align: center;"><b>Rp 8.000</b></h3>
+                </div> 
+
+                <div class="name1 ml-1" id="fantad">
+                    <img src="fanta.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Fanta Drink</h5>
+                    <h3 style="text-align: center;"><b>Rp 5.000</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="frestead">
+                    <img src="frestea.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Frestea Drink</h5>
+                    <h3 style="text-align: center;"><b>Rp 3.500</b></h3>
+                </div>
+
+                 <div class="name1 ml-1" id="sprited">
+                    <img src="sprite.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Sprite Drink</h5>
+                    <h3 style="text-align: center;"><b>Rp 5.500</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="pocarid">
+                    <img src="pocari.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Pocaris Sweet</h5>
+                    <h3 style="text-align: center;"><b>Rp 4.600</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="floridinad">
+                    <img src="floridina.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Floridina Drink</h5>
+                    <h3 style="text-align: center;"><b>Rp 4.000</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="pizzae">
+                    <img src="pizza.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Original Pizza</h5>
+                    <h3 style="text-align: center;"><b>Rp 180.000</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="steake">
+                    <img src="steak.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Steak Ikan</h5>
+                    <h3 style="text-align: center;"><b>Rp 80.000</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="spaghettie">
+                    <img src="sphagetti.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Spaghetti Sosis</h5>
+                    <h3 style="text-align: center;"><b>Rp 78.000</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="seblake">
+                    <img src="seblak2.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Seblak Spesial</h5>
+                    <h3 style="text-align: center;"><b>Rp 35.000</b></h3>
+                </div>
+
+                <div class="name1 ml-1" id="hotdoge">
+                    <img src="originalhot.jpg" alt="..." style="width: 150px; height: 135px; margin-left: 12px;">
+                    <h5 style="text-align: center; color: black;">Original Hotdog</h5>
+                    <h3 style="text-align: center;"><b>Rp 45.700</b></h3>
+                </div>
+            </div>
+            <button class="paymen">
+                <b>Payment</b>
+                <br>
+                 <b>(CTRL + P)</b>
+            </button>
+            <br>
+        </div>
+        <footer class="bawah">
+            <p>Ready </p>
+        </footer>
+
+        <script>
+           
+                var show = document.getElementById("belanja3");
+                var tamount = document.getElementById("total");
+                var jtax = document.getElementById("tax");
+                var hjumlh = document.getElementById("jumlah");
+                var dataBarang = [];
+                var dataHarga = [];
+                var dataQuan = [];
+
+                function hasil() {
+                    awal = 0;
+                    show.innerHTML = "";
+                    // looping
+                    for (var a = 0; a < dataBarang.length; a++) {
+                        show.innerHTML +=
+                        "<div class= 'belanja3'>" + "<b>" + "~" + dataBarang[a] + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "~" + "Unit price : " + "Rp. " + dataHarga[a] +"<br>" + "~Quantity :" + dataQuan[a] + "<input type= 'number'>" + "<i class='fas fa-trash fa-2x' style='float: right;cursor;pointer;' onclick='hapus(" + a + ")'></i>"+ "</div>";
+                        awal += dataHarga[a];
+                        hjumlh.innerHTML = "Rp " + awal;
+                        var tax = awal *10/100;
+                        jtax.innerHTML = "Rp " + tax;
+                        var total = awal + tax;
+                        tamount.innerHTML = "Rp " + total;
+                    }
+                    if(dataHarga.length == 0){
+                        hjumlh.innerHTML = "Rp. "+0;
+                        jtax.innerHTML = "Rp. "+0;
+                        tamount.innerHTML = "Rp. "+0;
+                    }
+                }
+                function hapus(a) {
+                    dataBarang.splice(a,1);
+                    dataHarga.splice(a,1);
+                    hasil();
+                }
+                function Reset(a) {
+                    dataBarang.splice(a);
+                    dataHarga.splice(a);
+                    hasil();
+                }
+            
+            
+                $('#pepsid').click(function () {
+                    var barang = "Pepsi Drink";
+                    var harga = 6500;
+                    var quantity = [a];
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    dataQuan.push(number())
+                    hasil()
+                });
+                $('#bintangd').click(function () {
+                    var barang = "Bintang Drink";
+                    var harga = 7500;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#cocacolad').click(function () {
+                    var barang = "Coca Cola";
+                    var harga = 6000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#awcoklatd').click(function () {
+                    var barang = "AW Sarsaparlla";
+                    var harga = 8200;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#bearb').click(function () {
+                    var barang = "Bear Brand";
+                    var harga = 8000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#fantad').click(function () {
+                    var barang = "Fanta Drink";
+                    var harga = 5000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#frestead').click(function () {
+                    var barang = "Frestea Drink";
+                    var harga = 3500;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#sprited').click(function () {
+                    var barang = "Sprite Drink";
+                    var harga = 5500;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#pocarid').click(function () {
+                    var barang = "Pocari Sweet";
+                    var harga = 4600;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#floridinad').click(function () {
+                    var barang = "Floridina Drink";
+                    var harga = 4000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#pizzae').click(function () {
+                    var barang = "Original Pizza";
+                    var harga = 180000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#steake').click(function () {
+                    var barang = "Steak Ikan";
+                    var harga = 80000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#spaghettie').click(function () {
+                    var barang = "Spaghetti Sosis";
+                    var harga = 78000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#seblake').click(function () {
+                    var barang = "Seblak Spesial";
+                    var harga = 35000;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });
+                $('#hotdoge').click(function () {
+                    var barang = "Original Hotdog";
+                    var harga = 45700;
+                    dataBarang.push(barang);
+                    dataHarga.push(harga);
+                    hasil()
+                });            
+           
+        </script>
+
+</body>
+</html>
